@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var jokes = [Joke]()
+    @State private var showingAlert = false
     var body: some View {
         
         NavigationView {
@@ -37,22 +38,58 @@ struct ContentView: View {
                    getJokes()
 
                })
+        .alert(isPresented: $showingAlert, content: {
+
+                        Alert(title: Text("Loading Error"),
+
+                              message: Text("There was a problem loading the data"),
+
+                              dismissButton: .default(Text("OK")))
+
+                })
+
     }
+    
     func getJokes() {
-        
-        jokes.append(Joke(setup: "Why do programmers always get Christmas and Halloween mixed up?",
-                          
-                          punchline: "Because DEC 25 = OCT 31"))
-        
-        jokes.append(Joke(setup: "How did the programmer die in the shower?",
-                          
-                          punchline: "She followed the shampoo bottle instructions: Lather. Rinse. Repeat."))
-        
-        jokes.append(Joke(setup: "There are 10 types of people in the world",
-                          
-                          punchline: "Those who understand binary and those who don’t."))
-        
-    }
+
+            let apiKey = "?rapidapi-key=d87dc96880msh138dad116ed364ep17b762jsnfa65120c7d18"
+
+            let query = "https://dad-jokes.p.rapidapi.com/joke/type/programming\(apiKey)"
+
+            if let url = URL(string: query) {
+
+                if let data = try? Data(contentsOf: url) {
+
+                    let json = try! JSON(data: data)
+
+                    if json["success"] == true {
+
+                        let contents = json["body"].arrayValue
+
+                        for item in contents {
+
+                            let setup = item["setup"].stringValue
+
+                            let punchline = item["punchline"].stringValue
+
+                            let joke = Joke(setup: setup, punchline: punchline)
+
+                            jokes.append(joke)
+
+                        }
+
+                        return
+
+                    }
+
+                }
+
+            }
+
+            showingAlert = true
+
+        }
+
 }
 struct Joke: Identifiable {
     let id = UUID()

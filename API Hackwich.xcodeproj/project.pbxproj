@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011C4B5825D470F3006E9330 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011C4B5725D470F3006E9330 /* SwiftyJSON.swift */; };
 		01D6320725D44632002C31FC /* API_HackwichApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D6320625D44632002C31FC /* API_HackwichApp.swift */; };
 		01D6320925D44632002C31FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D6320825D44632002C31FC /* ContentView.swift */; };
 		01D6320B25D44634002C31FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01D6320A25D44634002C31FC /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		011C4B5725D470F3006E9330 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		01D6320325D44632002C31FC /* API Hackwich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API Hackwich.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D6320625D44632002C31FC /* API_HackwichApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_HackwichApp.swift; sourceTree = "<group>"; };
 		01D6320825D44632002C31FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				01D6320625D44632002C31FC /* API_HackwichApp.swift */,
 				01D6320825D44632002C31FC /* ContentView.swift */,
 				01D6320A25D44634002C31FC /* Assets.xcassets */,
+				011C4B5725D470F3006E9330 /* SwiftyJSON.swift */,
 				01D6320F25D44634002C31FC /* Info.plist */,
 				01D6320C25D44634002C31FC /* Preview Content */,
 			);
@@ -140,6 +143,7 @@
 			files = (
 				01D6320925D44632002C31FC /* ContentView.swift in Sources */,
 				01D6320725D44632002C31FC /* API_HackwichApp.swift in Sources */,
+				011C4B5825D470F3006E9330 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
